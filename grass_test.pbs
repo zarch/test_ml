@@ -18,7 +18,7 @@
 #
 # e.g.   use OPEN MPI over InfiniBand with PGI compiler
 
-set RUNDIR = "/home/pizamb48/work/grass/08-23-2013/" 
+set RUNDIR = "/home/pizamb48/work/grass/20130823/" 
 # The above line set the directory the program will run from
 
 set APP = "test_node.py"
