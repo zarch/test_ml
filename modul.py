@@ -6,11 +6,10 @@ if sys.version[:3] != '2.7':
         raise SystemError
 
 
-from grass.pygrass.modules import Module, GridModule
+from grass.pygrass.modules import Module
 
 
-kwargs = {"cmd": "ml.nemesis",
-          "group": "rgb",
+kwargs = {"group": "rgb",
           "rast": ['photo_r', 'photo_g', 'photo_b'],
           "hdf": "test.hdf",
           "seg_thresholds": [0.01,0.05],
@@ -32,6 +31,6 @@ kwargs = {"cmd": "ml.nemesis",
           "flags": 'r',
           "overwrite": True}
 
-#md = Module('ml.nemesis')
-Module(**kwargs)
+md = Module('ml.nemesis')
+md(**kwargs)
 
