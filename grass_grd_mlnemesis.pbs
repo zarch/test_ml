@@ -1,0 +1,36 @@
+#!/bin/csh
+#
+#PBS -l nodes=1:ppn=8
+#PBS -o work.log
+#PBS -m abe
+#PBS -M pizamb48@ceh.ac.uk  
+#PBS -q verylong   
+
+
+# ** do NOT remove the leading # from the above PBS command line **
+
+# The above line tells PBS to use 5 nodes and 8 processors per node (so 40 processors)
+# There are 26 nodes with 8 processors each (so 208 processor in total)
+# You MUST change RUNDIR and APP at the very least
+
+# Make sure you MPI environment (InfiniBand, etc.) is setup properly in .bashrc before submitting
+# a job/program or it will not run proerly
+#
+# e.g.   use OPEN MPI over InfiniBand with PGI compiler
+
+set RUNDIR = "/home/pizamb48/work/grass/20130823/" 
+# The above line set the directory the program will run from
+
+set APP = "grd.py"
+# The above line sets the name of the program to be run
+
+set RUNFLAG = ""
+# The above line sets any runtime flags
+
+cd $RUNDIR 
+echo `pwd` 
+
+echo starting at `date`
+./$APP
+echo stop at `date`
+
