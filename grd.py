@@ -28,7 +28,7 @@ kwargs = {"group": "rgb",
           "training_mls": "BEST",
           "training_key": "tree",
           "transform": "standardize",
-          "output": "tree_rm_small2",
+          "output": "tree_rm_small3",
           "area_size": 20,
           "visible": ['test', 'PERMANENT'],
           #"flags": 'r',
@@ -37,9 +37,10 @@ kwargs = {"group": "rgb",
 grid = {"width": 5000,
         "height": 5000,
         "overlap": 400,
-        "debug": False}
+        "debug": False,
+        "move": "/local/pizamb48"}
 grid.update(**kwargs)
 
-md = GridModule('ml.nemesis', **grid)
+md = GridModule(cmd='ml.nemesis', **grid)
 md.run(clean=False)
 

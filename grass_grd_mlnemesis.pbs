@@ -18,7 +18,15 @@
 #
 # e.g.   use OPEN MPI over InfiniBand with PGI compiler
 
-set RUNDIR = "/home/pizamb48/work/grass/20130823/" 
+#
+# SET GRASS ENVIRONMENT VARIABLES
+#
+source ~/.csh_profile
+
+echo "print GISRC:"
+echo $GISRC
+
+set RUNDIR = "/home/pizamb48/work/grass/20130830/" 
 # The above line set the directory the program will run from
 
 set APP = "grd.py"
